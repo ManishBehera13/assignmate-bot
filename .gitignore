@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+admin/
+
+# Environment Variables
+.env
+
+# Media/Personal QR
+Qr.jpeg
+
+# Logs
+*.log

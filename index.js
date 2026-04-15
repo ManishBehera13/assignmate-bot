@@ -384,3 +384,15 @@ bot.on('message', async (msg) => {
 
 bot.on('polling_error', (error) => console.log("Polling Error:", error.message));
 bot.on('error', (error) => console.log("General Error:", error));
+
+// 5. Render Health Check Server (Satisfies "No open ports detected" error)
+const http = require('http');
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('AssignMate Bot remains active!\n');
+});
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`✅ Health check server listening on port ${PORT}`);
+});
